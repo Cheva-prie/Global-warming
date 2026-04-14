@@ -1,0 +1,253 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at top, #0b1a2a, #05080f);
+  background-attachment: fixed;  
+  color: #e6edf3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NavBar */
+.navbar{
+  position:fixed;
+  width:100%;
+  padding:20px 50px;
+  background:rgba(5,8,15,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+.nav-inner {
+  max-width: 800px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #00d4ff;
+  font-weight:bold;
+  letter-spacing: 2px;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #9aa4b2;
+  transition: 0.3s;
+}
+
+
+/* Hero */
+.hero{
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.overlay{
+  position:absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.8)
+  );
+}
+
+.hero-text{
+  position:absolute;
+  bottom: 60px;
+  left: 60px;
+  max-width: 700px;
+}
+
+.hero-text h1{
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow:0 0 15px rgba(0,200,255,0.5);
+}
+
+.hero-text p{
+  font-size: 20px;
+  opacity: 0.7;
+  color: #9aa4b2;
+
+}
+
+/* CONTENT */
+.content{
+  padding:100px 20px;
+  display:flex;
+  justify-content:center;
+  margin: auto;
+  max-width: 750px;
+}
+
+.article-box{
+  max-width:800px;
+  background:rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  line-height:1.8;
+  box-shadow:0 0 40px rgba(0,198,255,0.2);
+}
+
+.article-box p {
+  font-size: 17px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  text-align: justify;
+  color: #e6edf3;
+}
+
+/* Navigasi Button */
+.article-nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:60px;
+}
+
+.btn{
+  padding:12px 26px;
+  font-size:18px;
+  text-decoration:none;
+  border-radius:999px;
+  transition:all 0.3s ease;
+  position: relative;
+}
+
+.btn-back {
+  color: #9aa4b2;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  color: #ffffff;
+  border-color: #00d4ff;
+  transform: translateX(-5px);
+}
+
+.btn-next {
+  color: #05080f;
+  background: linear-gradient(135deg, #00d4ff, #66e0ff);
+  border: none;
+  box-shadow: 0 5px 20px rgba(0,212,255,0.3);
+  text-decoration: none;
+}
+
+.btn-next:hover {
+  transform: translateX(5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,212,255,0.5);
+}
+
+/* Sumber */
+.sumber {
+  margin-top: 80px;
+}
+
+.sumber h2 {
+  margin-bottom: 25px;
+  color: #00d4ff;
+}
+
+.sumber-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.sumber-card {
+  display: block;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.sumber-card:hover {
+  transform: translateY(-5px);
+  border-color: #00d4ff;
+  box-shadow: 0 10px 30px rgba(0,212,255,0.15);
+}
+
+.sumber-source {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.sumber-title {
+  font-size: 15px;
+  color: #eaeaea;
+  line-height: 1.4;
+}
+
+/* Footer */
+.footer p{
+  color:#7b8fa6;
+  font-size:13px;
+}
+
+/* Media*/
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-contact p {
+    text-align: center;
+  }
+}
+
+  /* Animasi*/
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowText {
+  from {
+    filter: drop-shadow(0 0 5px #00c6ff);
+  }
+  to {
+    filter: drop-shadow(0 0 20px #00ffcc);
+  }
+}

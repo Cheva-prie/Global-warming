@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infographic - Global warming</title>
+
+  <link rel="stylesheet" href="infografis.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-space"></div>
+  <div class="bg-stars"></div>
+  <div class="bg-nebula"></div>
+  <div class="bg-grid"></div>
+  <div class="radar"></div>
+
+  <!-- Loading -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-ring"></div>
+    <h2>GLOBAL WARMING SYSTEM</h2>
+    <p>Loading climate database...</p>
+  </div>
+
+  <!-- NavBar -->
+  <nav class="navbar">
+
+  <div class="logo">
+    <div class="logo-dot"></div>
+    <h1>Global<span>Warming</span></h1>
+  </div>
+
+  <div class="nav-center">
+
+    <div class="nav-row nav-main-row">
+      <a class="nav-btn nav-main" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+      <a class="nav-btn nav-main" href="topic.html"><i class="fa-solid fa-book"></i>Topic</a>
+      <a class="nav-btn nav-main" href="article.html"><i class="fa-solid fa-newspaper"></i>Article</a>
+      <a class="nav-btn nav-main" href="quiz.html"><i class="fa-solid fa-gamepad"></i>Quiz</a>
+      <a class="nav-btn nav-main" href="about.html"><i class="fa-solid fa-user-astronaut"></i>About</a>
+    </div>
+
+    <div class="nav-divider"></div>
+
+    <div class="nav-row nav-sub-row">
+      <a class="nav-btn nav-sub" href="#facts">Fakta</a>
+      <a class="nav-btn nav-sub" href="#timeline">Timeline</a>
+      <a class="nav-btn nav-sub" href="#charts">Charts</a>
+      <a class="nav-btn nav-sub" href="#analytics">Analisis</a>
+      <a class="nav-btn nav-sub" href="#sources">Sumber</a>
+    </div>
+
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn btn-outline" id="btnResetZoom">
+      <i class="fa-solid fa-magnifying-glass"></i> Reset
+    </button>
+
+    <button class="btn btn-outline" id="btnExportPNG">
+      <i class="fa-solid fa-image"></i> PNG
+    </button>
+
+    <button class="btn btn-primary" id="btnExportPDF">
+      <i class="fa-solid fa-file-pdf"></i> PDF
+    </button>
+  </div>
+
+</nav>
+
+  <!-- Main -->
+  <main class="container" id="dashboardContent">
+
+    <!-- Hero -->
+    <section class="hero reveal">
+      <div class="hero-left">
+        <div class="badge">
+          <i class="fa-solid fa-satellite"></i> PANTAU IKLIM GLOBAL LANGSUNG
+        </div>
+
+        <h2>
+          GLOBAL WARMING
+          <span>DASBOR INFOGRAFIS</span>
+        </h2>
+
+        <p>
+          Sistem visualisasi iklim yang terinspirasi NASA menggunakan dataset bergaya dunia nyata. Termasuk anomali suhu, CO₂ atmosfer, kenaikan permukaan laut, perbandingan emisi, komposisi gas rumah kaca, dan analisis data otomatis.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#timeline"><i class="fa-solid fa-chart-line"></i> Launch Timeline</a>
+          <a class="btn btn-secondary" href="#analytics"><i class="fa-solid fa-brain"></i> Open Analytics</a>
+        </div>
+
+        <div class="hero-mini">
+          <div class="mini-card">
+            <h3 id="heroTemp">--</h3>
+            <p>Temp Anomaly</p>
+          </div>
+          <div class="mini-card">
+            <h3 id="heroCO2">--</h3>
+            <p>CO₂ ppm</p>
+          </div>
+          <div class="mini-card">
+            <h3 id="heroSea">--</h3>
+            <p>Sea Level mm</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="earth-panel">
+          <h3><i class="fa-solid fa-earth-americas"></i> Earth Status</h3>
+          <p class="status-text">Ketidakstabilan sistem iklim terdeteksi.</p>
+
+          <div class="progress-box">
+            <div class="progress-label">
+              <span>Indeks Resiko</span>
+              <span id="riskText">--%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="riskFill"></div>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span>Gelombang Panas</span>
+            <span>Badai</span>
+            <span>Banjir</span>
+            <span>Pencairan Es</span>
+            <span>kekeringan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facts -->
+    <section class="section reveal" id="facts">
+      <div class="section-title">
+        <h2>Fakta</h2>
+        <p>Metrik iklim berdampak tinggi yang diambil dari database.</p>
+      </div>
+
+      <div class="facts-grid">
+        <div class="fact-card">
+          <i class="fa-solid fa-temperature-high"></i>
+          <h3 id="factTemp">--</h3>
+          <p>Anomali Suhu Terkini (°C)</p>
+        </div>
+
+        <div class="fact-card">
+          <i class="fa-solid fa-smog"></i>
+          <h3 id="factCO2">--</h3>
+          <p>Konsentrasi CO₂ Terkini (ppm)</p>
+        </div>
+
+        <div class="fact-card">
+          <i class="fa-solid fa-water"></i>
+          <h3 id="factSea">--</h3>
+          <p>Kenaikan Permukaan Laut (mm)</p>
+        </div>
+
+        <div class="fact-card">
+          <i class="fa-solid fa-calendar"></i>
+          <h3 id="factYear">--</h3>
+          <p>Tahun Terbaru Dataset</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline + Prediction -->
+    <section class="section reveal" id="timeline">
+      <div class="section-title">
+        <h2>Timeline (1850–2050)</h2>
+        <p>Bagan yang dapat diperbesar yang menggabungkan suhu, CO₂, dan permukaan laut. Bagan ini dibuat berdasarkan analisis regresi data</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-top">
+          <h3><i class="fa-solid fa-chart-line"></i> Timeline Iklim Gabungan</h3>
+
+          <div class="chip-row">
+            <button class="chip active" data-mode="all">All</button>
+            <button class="chip" data-mode="temp">Temperature</button>
+            <button class="chip" data-mode="co2">CO₂</button>
+            <button class="chip" data-mode="sea">Sea Level</button>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <canvas id="timelineChart"></canvas>
+        </div>
+
+        <div class="panel-bottom">
+          <p id="timelineInsight">Loading...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="section reveal" id="charts">
+      <div class="section-title">
+        <h2>Charts</h2>
+        <p>perbandingan emisi + komposisi gas rumah kaca + grafik prediksi.</p>
+      </div>
+
+      <div class="charts-grid">
+
+        <div class="panel">
+          <div class="panel-top">
+            <h3><i class="fa-solid fa-chart-column"></i> Emisi menurut Negara</h3>
+            <input type="text" id="searchCountry" placeholder="Search country...">
+          </div>
+          <div class="chart-box">
+            <canvas id="emissionChart"></canvas>
+          </div>
+          <p class="desc" id="emissionInsight"></p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-top">
+            <h3><i class="fa-solid fa-chart-pie"></i> Komposisoi Gas Rumah Kaca</h3>
+          </div>
+          <div class="chart-box">
+            <canvas id="ghgChart"></canvas>
+          </div>
+          <p class="desc" id="ghgInsight"></p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-top">
+            <h3><i class="fa-solid fa-chart-area"></i> Prediksi hingga Tahun 2050</h3>
+          </div>
+          <div class="chart-box">
+            <canvas id="predictionChart"></canvas>
+          </div>
+          <p class="desc" id="predictionInsight"></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Before After -->
+<section class="section reveal" id="compare">
+  <div class="section-title">
+    <h2>Kondisi Bumi: Masa Lalu vs Masa Kini</h2>
+    <p>Perbandingan visual indikator iklim dari era pra-industri hingga era modern.</p>
+  </div>
+
+  <div class="compare-grid">
+
+    <div class="panel compare-card">
+      <div class="compare-top">
+        <h3><i class="fa-solid fa-hourglass-start"></i> Masa Lalu (1850–1900)</h3>
+        <span class="compare-badge old">PRA-INDUSTRI</span>
+      </div>
+
+      <ul class="compare-list">
+        <li><i class="fa-solid fa-temperature-low"></i> Suhu anomali: <b id="pastTemp">--</b> °C</li>
+        <li><i class="fa-solid fa-smog"></i> Tingkat CO₂: <b id="pastCO2">--</b> ppm</li>
+        <li><i class="fa-solid fa-water"></i> Permukaan laut: <b id="pastSea">--</b> mm</li>
+        <li><i class="fa-solid fa-leaf"></i> Ekosistem: <b>Stable</b></li>
+        <li><i class="fa-solid fa-cloud-rain"></i> Cuaca ekstrem: <b>Low</b></li>
+      </ul>
+
+      <div class="compare-note">
+        <p>Sistem Bumi lebih dekat dengan keseimbangan alami.</p>
+      </div>
+    </div>
+
+    <div class="panel compare-card danger">
+      <div class="compare-top">
+        <h3><i class="fa-solid fa-hourglass-end"></i> Masa Kini (2020–2026)</h3>
+        <span class="compare-badge now">ERA MODERN</span>
+      </div>
+
+      <ul class="compare-list">
+        <li><i class="fa-solid fa-temperature-high"></i> Suhu anomali: <b id="nowTemp">--</b> °C</li>
+        <li><i class="fa-solid fa-smog"></i> Tingkat CO₂: <b id="nowCO2">--</b> ppm</li>
+        <li><i class="fa-solid fa-water"></i> Permukaan laut: <b id="nowSea">--</b> mm</li>
+        <li><i class="fa-solid fa-tree"></i> Ekosistem: <b>Threatened</b></li>
+        <li><i class="fa-solid fa-bolt"></i> Cuaca ekstrem: <b>High</b></li>
+      </ul>
+
+      <div class="compare-note">
+        <p>Ketidakstabilan iklim meningkat dengan cepat..</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel compare-summary">
+    <h3><i class="fa-solid fa-chart-simple"></i> Ringkasan Perubahan Iklim</h3>
+    <p id="compareInsight">Loading...</p>
+  </div>
+</section>
+
+
+<!-- Hubungan Sebab Akibat -->
+<section class="section reveal" id="chain">
+  <div class="section-title">
+    <h2>Penyebab → Efek Rumah Kaca → Rantai Dampak</h2>
+    <p>Bagaimana emisi menghasilkan gas rumah kaca, meningkatkan suhu dan memicu banjir?</p>
+  </div>
+
+  <div class="chain-wrapper">
+
+    <div class="chain-card">
+      <div class="chain-icon cause">
+        <i class="fa-solid fa-industry"></i>
+      </div>
+      <h3>Aktivitas Manusia</h3>
+      <p>Pabrik, kendaraan, penebangan hutan, pembakaran bahan bakar fosil.</p>
+      <div class="chain-data">
+        <span>Sumber utama: CO₂</span>
+      </div>
+    </div>
+
+    <div class="chain-arrow">
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-icon gas">
+        <i class="fa-solid fa-cloud"></i>
+      </div>
+      <h3>Gas Rumah Kaca</h3>
+      <p>CO₂, CH₄, N₂O menangkap panas di atmosfer.</p>
+      <div class="chain-data">
+        <span>Dominasi CO₂: <b id="chainCO2">--</b>%</span>
+      </div>
+    </div>
+
+    <div class="chain-arrow">
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-icon effect">
+        <i class="fa-solid fa-temperature-high"></i>
+      </div>
+      <h3>Kenaikan Suhu</h3>
+      <p>Pemanasan global meningkatkan panas lautan dan mencairkan es polar.</p>
+      <div class="chain-data">
+        <span>Suhu anomali terkini: <b id="chainTemp">--</b>°C</span>
+      </div>
+    </div>
+
+    <div class="chain-arrow">
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+    <div class="chain-card danger">
+      <div class="chain-icon flood">
+        <i class="fa-solid fa-house-flood-water"></i>
+      </div>
+      <h3>Bencana Banjir</h3>
+      <p>Kenaikan permukaan laut + hujan ekstrem menyebabkan banjir pesisir dan banjir perkotaan.</p>
+      <div class="chain-data">
+        <span>Permukaan laut <b id="chainSea">--</b> mm</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel chain-analysis">
+    <h3><i class="fa-solid fa-brain"></i> Analisis Hubungan</h3>
+    <p id="chainInsight">Loading...</p>
+  </div>
+</section>
+
+    <!-- Analisis -->
+    <section class="section reveal" id="analytics">
+      <div class="section-title">
+        <h2>Laporan Analisis Data</h2>
+        <p>Analisis otomatis yang dihitung langsung dari kumpulan data.</p>
+      </div>
+
+      <div class="analytics-grid">
+
+        <div class="panel analytic">
+          <h3><i class="fa-solid fa-arrow-trend-up"></i> Tren Suhu</h3>
+          <p id="anaTemp">Loading...</p>
+        </div>
+
+        <div class="panel analytic">
+          <h3><i class="fa-solid fa-cloud"></i> Tren CO₂</h3>
+          <p id="anaCO2">Loading...</p>
+        </div>
+
+        <div class="panel analytic">
+          <h3><i class="fa-solid fa-water"></i> Tren Permukaan Laut</h3>
+          <p id="anaSea">Loading...</p>
+        </div>
+
+        <div class="panel analytic danger">
+          <h3><i class="fa-solid fa-triangle-exclamation"></i> Warning System</h3>
+          <p id="anaWarning">Loading...</p>
+        </div>
+
+      </div>
+    </section>
+
+<section class="section reveal" id="hasilAnalisis">
+  <div class="section-title">
+    <h2>Hasil Analisis Data</h2>
+    <p>Kesimpulan utama berdasarkan grafik dan perhitungan otomatis dari sistem dashboard.</p>
+  </div>
+
+  <div class="analysis-grid">
+
+    <div class="panel analysis-card">
+      <h3><i class="fa-solid fa-temperature-high"></i> Tren Pemanasan Global</h3>
+      <p id="resultTemp">
+        Loading...
+      </p>
+    </div>
+
+    <div class="panel analysis-card">
+      <h3><i class="fa-solid fa-cloud"></i> Hubungan CO₂ & Suhu</h3>
+      <p id="resultCO2">
+        Loading...
+      </p>
+    </div>
+
+    <div class="panel analysis-card">
+      <h3><i class="fa-solid fa-water"></i> Kenaikan Permukaan Laut</h3>
+      <p id="resultSea">
+        Loading...
+      </p>
+    </div>
+
+    <div class="panel analysis-card danger">
+      <h3><i class="fa-solid fa-triangle-exclamation"></i> Kesimpulan Risiko</h3>
+      <p id="resultRisk">
+        Loading...
+      </p>
+    </div>
+
+  </div>
+
+  <div class="panel analysis-summary">
+    <h3><i class="fa-solid fa-satellite"></i> Interpretasi Keseluruhan</h3>
+    <p id="resultSummary">Loading...</p>
+  </div>
+</section>
+
+    <!-- Sumber -->
+    <section class="glass-section reveal" id="sources">
+    <div class="section-head" data-aos="fade-up">
+      <h2>Sumber</h2>
+      <p>Sumber resmi yang digunakan untuk inspirasi dataset dan pemetaan dunia nyata.</p>
+    </div>
+    
+  <div class="sumber-grid">
+
+    <a href="https://datahub.io/core/global-temp" target="_blank" class="sumber-card"> 
+      <p class="sumber-source">DataHub Global Temp (kompilasi NASA/NOAA)</p> 
+      <h3 class="sumber-title">
+        Data Suhu Anomali 
+      </h3> 
+    </a>
+
+    <a href="https://gml.noaa.gov/ccgg/trends/" target="_blank" class="sumber-card"> 
+      <p class="sumber-source">NOAA Global Monitoring Laboratory (Mauna Loa CO₂)</p> 
+      <h3 class="sumber-title">
+        Data Kenaikan Konsentrasi CO₂
+      </h3> 
+    </a> 
+
+    <a href="https://sealevel.nasa.gov/" target="_blank" class="sumber-card"> 
+      <p class="sumber-source">DataHub Global Average Absolute Sea Level Change</p> 
+      <h3 class="sumber-title">
+       Data Kenaikan Permukaan Laut
+      </h3> 
+    </a> 
+
+    <a href="https://share.google/sCMWQABrguTB6b2Zg" target="_blank" class="sumber-card"> 
+      <p class="sumber-source">Each Country's Share of CO2 Emissions | Union of Concerned Scientists</p> 
+      <h3 class="sumber-title">
+        Perbandingan Emisi Gas Rumah Kaca di Setiap Negara
+      </h3> 
+    </a> 
+
+    <a href="https://ourworldindata.org/emissions-by-gas" target="_blank" class="sumber-card"> 
+      <p class="sumber-source">IPCC - Our World In Data</p> 
+      <h3 class="sumber-title">
+        Komponen Gas Rumah Kaca
+      </h3> 
+    </a> 
+
+  </div>
+</section>
+
+  <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Global Warming - Infographic Dashboard</p>
+    </footer>
+
+  </main>
+
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script> <!-- zoom plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> <!-- html2pdf -->
+  <script src="https://kit.fontawesome.com/a2d9d6c9a1.js" crossorigin="anonymous"></script> <!-- icons -->
+  <script src="infografis.js"></script>
+
+</body>
+</html>

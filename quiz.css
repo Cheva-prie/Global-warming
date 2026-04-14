@@ -1,0 +1,253 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  height:100vh;
+  background: radial-gradient(circle at top, #0b1a2a, #05080f);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Container */
+.container{
+  width:90%;
+  max-width:600px;
+}
+
+/* Top Bar */
+.top-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+/* Timer */
+#timer{
+  font-size:18px;
+  font-weight:bold;
+  color:#00c6ff;
+}
+
+/* Progess Bar */
+.progress{
+  flex:1;
+  height:6px;
+  margin:0 10px;
+  background:#1a2333;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+#progressBar{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg,#00c6ff,#0072ff);
+  transition:0.4s;
+}
+
+/* Sound Button */
+.sound-btn{
+  background:#111;
+  border:none;
+  color:white;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* Quiz Card */
+.quiz-card{
+  background: rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,198,255,0.2);
+  animation:fadeIn 0.5s ease;
+}
+
+/* Question */
+.question{
+  font-size:18px;
+  margin-bottom:15px;
+  color: #ffffff;}
+
+/* Options */
+.option{
+  padding:10px;
+  margin:8px 0;
+  background: rgba(255,255,255,0.08);
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+  color: #c8bebe;
+}
+
+.option:hover{
+  background: rgba(0,198,255,0.3);
+  transform:scale(1.02);
+}
+
+/* Textarea */
+textarea{
+  width:100%;
+  height:90px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+  padding:10px;
+  background: rgba(255,255,255,0.08);
+  color:white;
+}
+
+textarea:focus{
+  outline:none;
+  border:2px solid #00c6ff;
+}
+
+/* Button */
+button{
+  margin-top:10px;
+  padding:8px 15px;
+  border:none;
+  border-radius:14px;
+  background:#00c6ff;
+  color:white;
+  cursor:pointer;
+}
+
+/* Result */
+.result-box{
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(0,255,255,0.2);
+  border: 1px solid rgba(0,255,255,0.2);
+  animation: fadeIn 0.8s ease;
+}
+
+.result-box h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #00eaff;
+}
+
+.result-box h2 {
+  font-size: 32px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.result-box h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #a0f0ff;
+}
+
+/* Score */
+.detail-score {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3);
+}
+
+.detail-score p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #d0faff;
+}
+
+/* Button */
+.result-btns {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.result-btns button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+  transition: 0.3s;
+}
+
+.result-btns button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0,255,255,0.7);
+}
+
+/* Restart */
+.btn-restart{
+  padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 10px rgba(0,198,255,0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-restart:hover{
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0,198,255,0.8),
+              0 0 40px rgba(0,114,255,0.6);
+}
+
+/* Feedback */
+.feedback{
+  margin-top:10px auto;
+  padding:12px;
+  border-radius:10px;
+  animation:pop 0.3s ease;
+}
+
+.correct{
+  background:rgba(0,255,150,0.1);
+  color: #00ffae;
+}
+
+.wrong{
+  background:rgba(255,0,80,0.1);
+  color:  #ff4d6d;
+}
+
+/* Review */
+.review{
+  margin-top:10px;
+  padding:10px;
+  border-radius:10px;
+}
+
+/* Animasi */
+@keyframes pop{
+  0%{transform:scale(0.8);opacity:0;}
+  100%{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}

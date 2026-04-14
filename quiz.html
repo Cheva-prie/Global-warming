@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quiz - Global Warming</title>
+  
+    <link rel="stylesheet" href="quiz.css"> <!-- Link CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> <!--  Link Bootstrap -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> <!--  Link AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!--  Link Icon -->
+</head>
+
+<body>
+
+<!-- Background Music -->
+  <audio id="bgMusic" src="Image/Quiz/Background Music.mpeg" autoplay loop></audio>
+  <audio id="correctSound" src="Image/Quiz/Sound Effect Correct.m4a"></audio>
+  <audio id="wrongSound" src="Image/Quiz/Sound Effect Wrong.mpeg"></audio>
+
+  <div class="container">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div id="timer">15</div>
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <button onclick="toggleSound()" class="sound-btn">🔊</button>
+    </div>
+
+    <!-- QUIZ CARD -->
+    <div class="quiz-card" id="quiz">
+      <!-- Soal muncul di sini -->
+    </div>
+
+  </div>
+
+<!--Script-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="quiz.js"></script>
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+</script> 
+
+</body>
+
+</html>
